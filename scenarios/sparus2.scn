@@ -101,10 +101,10 @@
 			</internal_part>
 
 			<internal_part name="Foam" type="cylinder" physics="submerged" buoyant="true">
-				<dimensions radius="0.110" height="0.37"/>
+				<dimensions radius="0.111" height="0.26"/>
 				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 				<material name="Neutral"/>
-				<mass value="8.8"/>
+				<mass value="4.8"/>
 				<look name="grey"/>
 				<compound_transform rpy="0.0 1.571 0.0" xyz="0.575 0.0 0.0"/>
 			</internal_part>			
@@ -149,7 +149,7 @@
 		<actuator name="ThrusterHeave" type="thruster">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 1.571 0.0" xyz="0.0 0.0 0.07"/>
-			<specs thrust_coeff="0.537" thrust_coeff_backward="0.398" torque_coeff="0.01" max_rpm="4000.0" inverted="true"/>
+			<specs thrust_coeff="0.7" thrust_coeff_backward="0.5" torque_coeff="0.01" max_rpm="4000.0" inverted="true"/>
 			<propeller diameter="0.08" right="true">
 				<mesh filename="sparus2/propeller.obj" scale="1.0"/>
 				<material name="Neutral"/>
@@ -160,7 +160,7 @@
 		<actuator name="ThrusterSurgeStarboard" type="thruster">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="-0.573 0.167 0.0"/>
-			<specs thrust_coeff="0.698" thrust_coeff_backward="0.293" torque_coeff="0.01" max_rpm="4000.0" inverted="true"/>
+			<specs thrust_coeff="0.5" thrust_coeff_backward="0.35" torque_coeff="0.01" max_rpm="4000.0" inverted="true"/>
 			<propeller diameter="0.08" right="false">
 				<mesh filename="sparus2/propeller.obj" scale="1.0"/>
 				<material name="Neutral"/>
@@ -171,7 +171,7 @@
 		<actuator name="ThrusterSurgePort" type="thruster">
 			<link name="Vehicle"/>
 			<origin rpy="0.0 0.0 0.0" xyz="-0.573 -0.167 0.0"/>
-			<specs thrust_coeff="0.698" thrust_coeff_backward="0.293" torque_coeff="0.01" max_rpm="4000.0"/>
+			<specs thrust_coeff="0.5" thrust_coeff_backward="0.35" torque_coeff="0.01" max_rpm="4000.0"/>
 			<propeller diameter="0.08" right="true">
 				<mesh filename="sparus2/propeller.obj" scale="1.0"/>
 				<material name="Neutral"/>
@@ -182,5 +182,6 @@
 		<world_transform rpy="0.0 0.0 0.0" xyz="$(arg position)"/>
 
 		<ros_subscriber thrusters="/sparus2/controller/thruster_setpoints"/> 
+		<ros_publisher thrusters="/sparus2/controller/thruster_state"/>
 	</robot>
 </scenario>

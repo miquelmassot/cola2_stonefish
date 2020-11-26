@@ -188,5 +188,7 @@
 		<world_transform rpy="0.0 0.0 -1.57" xyz="0.0 3.9 2.5"/>
 	</robot>
 
-	<include file="$(find cola2_stonefish)/scenarios/girona500_eca5emicro.scn"/>
+	<include file="$(find cola2_stonefish)/scenarios/girona500_eca5emicro.scn">
+		<arg name="position" value="0.0 0.0 1.0"/>
+	</include>
 </scenario>
